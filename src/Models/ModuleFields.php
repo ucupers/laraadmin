@@ -104,13 +104,13 @@ class ModuleFields extends Model
             if(!Schema::hasTable($module->name_db)) {
                 Schema::create($module->name_db, function ($table) {
                     $table->increments('id');
-                    $table->softDeletes();
+                    //$table->softDeletes();
                     $table->timestamps();
                 });
             } else if(Schema::hasTable($module->name_db) && count($modulefields) == 0) {
                 // create SoftDeletes + Timestamps for module with existing table
                 Schema::table($module->name_db, function ($table) {
-                    $table->softDeletes();
+                    //$table->softDeletes();
                     $table->timestamps();
                 });
             }

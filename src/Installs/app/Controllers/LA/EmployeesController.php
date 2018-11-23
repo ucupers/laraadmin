@@ -235,7 +235,8 @@ class EmployeesController extends Controller
 	{
 		if(Module::hasAccess("Employees", "delete")) {
 			Employee::find($id)->delete();
-			
+			User::find($id)->delete();
+
 			// Redirecting to index() method
 			return redirect()->route(config('laraadmin.adminRoute') . '.employees.index');
 		} else {

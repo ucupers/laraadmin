@@ -201,7 +201,7 @@ class Module extends Model
                 if($module->name_db == "users") {
                     $table->rememberToken();
                 }
-                $table->softDeletes();
+                //$table->softDeletes();
                 $table->timestamps();
             });
         }
